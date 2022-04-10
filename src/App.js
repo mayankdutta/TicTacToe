@@ -1,11 +1,16 @@
-import React from "react";
-import Home from "./component/Home";
-import GameArea from "./component/GameArea";
+import React, { useState } from "react";
+import Choice from "./component/Choice";
+import GamePlay from "./component/GamePlay";
 
 const App = () => {
+  const [player, setPlayer] = useState("");
   return (
-    <div>
-      <GameArea></GameArea>
+    <div> {
+      player === "" ? (
+        <Choice setPlayer={setPlayer} />
+      ) : (
+        <GamePlay player={player} setPlayer={setPlayer} />)
+    }
     </div>
   );
 };

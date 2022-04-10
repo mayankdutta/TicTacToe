@@ -1,6 +1,6 @@
 import React from "react";
 
-const Board = ({ player, grid, updateHandler }) => {
+const SudokuBoard = ({ player, grid, updateHandler }) => {
   return (
     <div className="container">
       <h1>Tic-Tac-Toe</h1>
@@ -25,4 +25,4 @@ const Board = ({ player, grid, updateHandler }) => {
   );
 };
 
-export default Board;
+export default SudokuBoard;

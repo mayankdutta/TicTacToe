@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 
-const Result = ({ winner }) => {
+const Conclusion = ({ winner }) => {
   return (
     <div className="center">
       {winner !== "playing" ? (
@@ -13,4 +13,4 @@ const Result = ({ winner }) => {
   );
 };
 
-export default Result;
+export default Conclusion;

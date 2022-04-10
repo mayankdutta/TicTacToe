@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Home.css";
 
-const Home = ({ player, setPlayer }) => {
+const Choice = ({ player, setPlayer }) => {
   return (
     <>
       <div className="center">
@@ -17,4 +17,4 @@ const Home = ({ player, setPlayer }) => {
   );
 };
 
-export default Home;
+export default Choice;

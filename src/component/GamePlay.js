@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import "./GameArea.css";
-import Board from "./board";
-import Home from "./Home";
-import Result from "./Result";
-import { Check } from "./check";
+import "./GamePlay.css";
+import SudokuBoard from "./sudokuBoard";
+import Choice from "./Choice";
+import Conclusion from "./Conclusion";
 
-const initialState = [
+const initialGrid = [
   ["", "", "", ""],
   ["", "", "", ""],
   ["", "", "", ""],
   ["", "", "", ""],
 ];
 
-const GameArea = () => {
-  const [player, setPlayer] = useState("");
-  const [grid, setGrid] = useState(initialState);
+const GamePlay = ({ player, setPlayer }) => {
+  const [grid, setGrid] = useState(initialGrid);
   const [totalFilled, setTotalFilled] = useState(0);
   const [winner, setWinner] = useState("playing");
   const [loading, setLoading] = useState(true);
@@ -96,16 +94,12 @@ const GameArea = () => {
   return (
     <>
       {loading ? (
-        player === "" ? (
-          <Home player={player} setPlayer={setPlayer} />
-        ) : (
-          <Board player={player} grid={grid} updateHandler={updateHandler} />
-        )
+        <SudokuBoard player={player} grid={grid} updateHandler={updateHandler} />
       ) : (
-        <Result winner={winner} />
+        <Conclusion winner={winner} />
       )}
     </>
   );
 };
 
-export default GameArea;
+export default GamePlay;
